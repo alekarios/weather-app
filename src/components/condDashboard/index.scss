@@ -1,0 +1,6 @@
+@use 'src/base.scss';
+
+.condDashboard-container {
+    @include base.main-dashboard;
+    height: 300px;
+}

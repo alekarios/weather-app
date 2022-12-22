@@ -1,2 +1,2 @@
-import Landing from "src/pages/landing/landing";
+import Landing from "./landing";
 export default Landing;

@@ -1,0 +1,18 @@
+.layout-container {
+	margin: 0 auto;
+	width: 100vw;
+	height: 100vh;
+	max-width: 1920px;
+	max-height: 1080px;
+	background: #0b131e;
+	display: flex;
+	justify-content: space-between;
+
+	&__children {
+		display: flex;
+		flex-direction: column;
+		width: 1000px;
+		gap: 30px;
+		margin: 50px;
+	}
+}

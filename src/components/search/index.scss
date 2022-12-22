@@ -1,0 +1,37 @@
+@use 'src/base.scss';
+
+.search-container {
+	display: flex;
+	align-items: center;
+	height: 56px;
+    gap: 20px;
+
+	input {
+		@include base.main-backgound;
+		@include base.main-text;
+		width: 80%;
+		height: inherit;
+		border-radius: 16px;
+		border: 1px solid black;
+        box-sizing: border-box;
+
+		&:focus {
+			outline: none;
+			@include base.main-background-active;
+		}
+	}
+
+	button {
+		@include base.main-backgound;
+		@include base.main-text;
+		width: 20%;
+		height: inherit;
+		border-radius: 16px;
+		border: solid black;
+		cursor: pointer;
+
+		&:hover {
+			@include base.main-background-active;
+		}
+	}
+}

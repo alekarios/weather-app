@@ -1,0 +1,24 @@
+@use 'src/base.scss';
+
+.sideForecast-container {
+	@include base.main-backgound;
+	width: 400px;
+	height: 700px;
+	margin: 130px 50px 50px 50px;
+	box-sizing: border-box;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+
+	&__items {
+		margin: 5px 20px 0px 20px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	hr {
+		width: 90%;
+		border: 1px solid;
+		@include base.main-line;
+	}
+}

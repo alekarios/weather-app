@@ -1,0 +1,21 @@
+@mixin main-backgound {
+    background: #253042;
+}
+
+@mixin main-background-active {
+    background: #314667;
+}
+
+@mixin main-text {
+    color: #ABAEB2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin main-line {
+    color: #414b58;
+}
+
+@mixin main-dashboard {
+    background: #253042;
+    border-radius: 20px;
+}

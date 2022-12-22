@@ -1,0 +1,6 @@
+@use 'src/base.scss';
+
+.todayDashboard-container {
+    @include base.main-dashboard;
+    height: 150px;
+}
