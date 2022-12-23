@@ -1,13 +1,16 @@
 import Router from 'src/router';
 import Layout from 'src/components/layout';
-import Search from 'src/components/search'
+import Search from 'src/components/search';
+import { DataProvider } from 'src/store/context';
 
 const App = () => {
 	return (
-		<Layout>
-			<Search/>
-			<Router />
-		</Layout>
+		<DataProvider>
+			<Layout>
+				<Search />
+				<Router />
+			</Layout>
+		</DataProvider>
 	);
 };
 

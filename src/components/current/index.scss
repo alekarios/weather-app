@@ -1,6 +1,21 @@
+@use 'src/base.scss';
+
 .current-container {
     display: flex;
     justify-content: space-between;
     height: 180px;
     align-items: center;
+
+    &__info {
+        p {
+            @include base.main-text;
+            font-weight: 800;
+            font-size: 2.3rem;
+        }
+    }
+
+    img {
+        width: 158px;
+        height: auto;
+    }
 }

@@ -3,17 +3,29 @@
 .sideForecast-container {
 	@include base.main-backgound;
 	width: 400px;
-	height: 700px;
+	height: 654px;
 	margin: 130px 50px 50px 50px;
 	box-sizing: border-box;
 	border-radius: 20px;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+
+	p {
+		margin-left: 20px;
+		@include base.main-text;
+		font-size: 1.5rem;
+	}
 
 	&__items {
 		margin: 5px 20px 0px 20px;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+
+		p {
+			font-size: 1rem;
+		}
 	}
 
 	hr {

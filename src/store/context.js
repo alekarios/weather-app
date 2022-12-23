@@ -1,10 +1,25 @@
 /* eslint-disable default-case */
-import React, { createContext, useReducer } from 'react';
-import useFetch from '../hooks/useFetch';
+import React, {
+	createContext,
+	useReducer,
+	useMemo,
+	useState,
+	useEffect,
+} from 'react';
+import axios from 'axios';
+import Loader from 'src/components/loader/loader';
+axios.defaults.baseURL = `http://api.weatherapi.com/v1/forecast.json`;
+
+const headers = {
+	'Access-Control-Allow-Headers': '*',
+	'Access-Control-Allow-Origin': '*',
+	'Access-Control-Allow-Methods': '*',
+};
 
 const initialState = {
-	_page: 1,
-	_limit: 10,
+	key: 'e83ef2057e354879951114815222312',
+	days: 10,
+	q: 'athens',
 };
 
 const reducer = (state, action) => {
@@ -20,8 +35,51 @@ const reducer = (state, action) => {
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
+	const [response, setResponse] = useState({
+		data: {},
+		error: '',
+		loading: true,
+	});
 	const [state, dispatch] = useReducer(reducer, initialState);
-	const apiResponse = useFetch(state);
-	const value = { state, dispatch, apiResponse };
-	return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
+
+	useEffect(() => {
+		const fetch = async () => {
+			try {
+				const result = await axios.request({
+					params: state,
+					headers,
+				});
+				setResponse((prevState) => ({
+					...prevState,
+					data: result.data,
+				}));
+			} catch (error) {
+				setResponse((prevState) => ({
+					...prevState,
+					error,
+				}));
+			} finally {
+				setResponse((prevState) => ({
+					...prevState,
+					loading: false,
+				}));
+			}
+		};
+		fetch();
+	}, [state]);
+
+	const contextValue = useMemo(
+		() => ({
+			dispatch,
+			response,
+		}),
+		[response]
+	);
+
+	return (
+		<DataContext.Provider value={contextValue}>
+			<Loader enable={response.loading} />
+			{children}
+		</DataContext.Provider>
+	);
 };

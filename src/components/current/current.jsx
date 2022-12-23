@@ -2,14 +2,15 @@ import './index.scss';
 import React from 'react';
 
 
-const Current = () => {
-    return (
+const Current = ({ location, data }) => {
+
+    return location && data && (
         <div className='current-container'>
             <div className='current-container__info'>
-                <p>City</p>
-                <p>30</p>
+                <p>{ location.name }</p>
+                <p>{ `${data.temp_c} °C` }</p>
             </div>
-            <img  src='' alt='curr_temp_img'/>
+            <img  src={ data.condition.icon } alt='curr_temp_img'/>
         </div>
     )
 }

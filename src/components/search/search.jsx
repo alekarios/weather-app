@@ -1,8 +1,10 @@
 import './index.scss';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { DataContext } from 'src/store/context';
 
 const Search = () => {
 	const [city, setCity] = useState('');
+	const { dispatch } = useContext(DataContext);
 
 	const handleType = (e) => {
 		const { value } = e.target;
@@ -10,8 +12,10 @@ const Search = () => {
 	};
 
 	const handleSearch = () => {
-		//add functionality
-		console.log(city);
+		dispatch({
+			type: 'update',
+			payload: { q: city },
+		});
 	};
 
 	return (
