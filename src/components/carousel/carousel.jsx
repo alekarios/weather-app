@@ -9,9 +9,9 @@ import { Pagination } from 'swiper';
 const Carousel = ({ data, ...rest }) => {
 	return (
 		<Swiper
-			slidesPerView={4}
+			slidesPerView={5}
 			spaceBetween={30}
-			slidesPerGroup={5}
+			slidesPerGroup={4}
 			loop={true}
 			loopFillGroupWithBlank={true}
 			pagination={{
