@@ -2,10 +2,8 @@
 
 .todayDashboard-container {
 	@include base.main-dashboard;
+	width: 80%;
 	height: 250px;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
 
 	&__hour {
         display: flex;

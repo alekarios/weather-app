@@ -1,7 +1,7 @@
 import './index.scss';
 import React, { useContext } from 'react';
-import Current from 'src/components/current';
-import TodayDashboard from 'src/components/todayDashboad';
+import Current from 'src/pages/landing/current';
+import TodayDashboard from 'src/pages/landing/todayDashboad';
 import { DataContext } from 'src/store/context';
 
 const Landing = () => {

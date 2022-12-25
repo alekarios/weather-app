@@ -3,8 +3,9 @@
 .current-container {
     display: flex;
     justify-content: space-between;
-    height: 180px;
+    height: 270px;
     align-items: center;
+    width: 50%;
 
     &__info {
         p {
@@ -15,7 +16,7 @@
     }
 
     img {
-        width: 158px;
+        width: 300px;
         height: auto;
     }
 }
