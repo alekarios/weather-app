@@ -1,22 +1,22 @@
 @use 'src/base.scss';
 
 .current-container {
-    display: flex;
-    justify-content: space-between;
-    height: 270px;
-    align-items: center;
-    width: 50%;
+	display: flex;
+	justify-content: space-between;
+	height: 270px;
+	align-items: center;
+	width: 50%;
 
-    &__info {
-        p {
-            @include base.main-text;
-            font-weight: 800;
-            font-size: 2.3rem;
-        }
-    }
+	&__info {
+		p {
+			@include base.main-text;
+			font-weight: 800;
+			font-size: 2.3rem;
+		}
+	}
 
-    img {
-        width: 300px;
-        height: auto;
-    }
+	img {
+		width: 300px;
+		height: auto;
+	}
 }

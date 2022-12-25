@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
 	return (
 		<div className='layout-container'>
 			<div className='layout-container__children'>{children}</div>
-			<SideForecast/>
+			<SideForecast />
 		</div>
 	);
 };
