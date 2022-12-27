@@ -2,21 +2,24 @@
 
 .current-container {
 	display: flex;
-	justify-content: space-between;
-	height: 270px;
+	flex-direction: column;
 	align-items: center;
-	width: 50%;
 
-	&__info {
-		p {
-			@include base.main-text;
-			font-weight: 800;
-			font-size: 2.3rem;
+	p {
+		font-weight: 800;
+		font-size: 2.3rem;
+		margin: 0;
+		@include base.main-text;
+		@include base.devices(mobile) {
+			font-size: 1.5rem;
 		}
 	}
 
 	img {
-		width: 300px;
+		width: 200px;
 		height: auto;
+		@include base.devices(mobile) {
+			width: 100px;
+		}
 	}
 }

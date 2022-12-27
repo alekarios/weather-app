@@ -2,8 +2,15 @@
 
 .todayDashboard-container {
 	@include base.main-dashboard;
-	width: 80%;
+	width: 800px;
 	height: 250px;
+	@include base.devices(tablet) {
+		width: 500px;
+		height: 200px;
+	}
+	@include base.devices(mobile) {
+		width: 364px;
+	}
 
 	&__hour {
 		display: flex;

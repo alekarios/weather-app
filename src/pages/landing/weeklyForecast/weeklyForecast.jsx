@@ -1,17 +1,12 @@
 import './index.scss';
-import React, { useContext } from 'react';
-import { DataContext } from 'src/store/context';
 import tryGet from 'src/utils/tryGet';
 import getDay from 'src/utils/getDay';
 import days from 'src/data/days';
 
-const SideForecast = () => {
-	const {
-		response: { data },
-	} = useContext(DataContext);
-	const forecastData = tryGet(() => data.forecast.forecastday, []);
+const WeeklyForecast = ({ data }) => {
+	const forecastData = tryGet(() => data.forecastday, []);
 	return (
-		<div className='sideForecast-container'>
+		<div className='weeklyForecast-container'>
 			<p>{`${forecastData.length}-Day Forecast `}</p>
 			{forecastData.map(({ date, day }) => {
 				const dayName = getDay(days, date);
@@ -19,7 +14,7 @@ const SideForecast = () => {
 					<>
 						<div
 							key={date}
-							className='sideForecast-container__items'>
+							className='weeklyForecast-container__items'>
 							<p>{dayName}</p>
 							<img
 								src={day.condition.icon}
@@ -35,4 +30,4 @@ const SideForecast = () => {
 	);
 };
 
-export default SideForecast;
+export default WeeklyForecast;

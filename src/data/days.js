@@ -1,30 +1,30 @@
 const days = [
 	{
-		id: 0,
+		id: 1,
 		name: 'Monday',
 	},
 	{
-		id: 1,
+		id: 2,
 		name: 'Tuesday',
 	},
 	{
-		id: 2,
+		id: 3,
 		name: 'Wednesday',
 	},
 	{
-		id: 3,
+		id: 4,
 		name: 'Thursday',
 	},
 	{
-		id: 4,
+		id: 5,
 		name: 'Friday',
 	},
 	{
-		id: 5,
+		id: 6,
 		name: 'Saturday',
 	},
 	{
-		id: 6,
+		id: 7,
 		name: 'Sunday',
 	},
 ];

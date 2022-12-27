@@ -6,14 +6,12 @@ const Current = ({ location, data }) => {
 		location &&
 		data && (
 			<div className='current-container'>
-				<div className='current-container__info'>
-					<p>{location.name}</p>
-					<p>{`${data.temp_c} °C`}</p>
-				</div>
+				<p>{location.name}</p>
 				<img
 					src={data.condition.icon}
 					alt='curr_temp_img'
 				/>
+				<p>{`${data.temp_c} °C`}</p>
 			</div>
 		)
 	);
