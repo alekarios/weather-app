@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import axios from 'axios';
 import Loader from 'src/components/loader/loader';
-axios.defaults.baseURL = `http://api.weatherapi.com/v1/forecast.json`;
+axios.defaults.baseURL = `https://api.weatherapi.com/v1/forecast.json`;
 
 const headers = {
 	'Access-Control-Allow-Headers': '*',
