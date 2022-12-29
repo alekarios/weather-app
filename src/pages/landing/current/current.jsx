@@ -16,7 +16,15 @@ const Current = ({ location, data }) => {
 					/>
 					<p>{data.condition.text}</p>
 				</div>
-				<div className='current-container__tempInfo'></div>
+				<div className='current-container__tempInfo'>
+					<div className='current-container__tempInfo__info-1'>
+						<p>{`Current Temp: ${data.temp_c}°C`}</p>
+						<p>{`Feels like: ${data.feelslike_c}`}</p>
+					</div>
+					<div className='current-container__tempInfo__info-2'>
+					<p>{`Humidity: ${data.humidity}%`}</p>
+					</div>
+				</div>
 			</div>
 		)
 	);
