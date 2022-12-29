@@ -21,10 +21,11 @@ const CountryForm = () => {
 
 	const handleCountry = (e) => {
 		const citiesMap = City.getCitiesOfCountry(e.target.value).map(
-			({ name }) => ({ name, value: name })
+			({ name, latitude, longitude }) => ({ name, value: `${latitude},${longitude}` })
 		);
 		citiesMap.unshift({ name: 'Select city', value: '' });
 		setCities(citiesMap);
+		console.log(citiesMap)
 	};
 
 	const handleCity = (e) => {
