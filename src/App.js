@@ -1,16 +1,23 @@
 import Router from 'src/router';
 import Layout from 'src/components/layout';
+import Header from 'src/components/header';
 import Search from 'src/components/search';
-import { DataProvider } from 'src/store/context';
+import Slider from 'src/components/slider';
+import ComposedProviders from 'src/store/composedProviders';
+import CountryForm from 'src/components/countryForm';
 
 const App = () => {
 	return (
-		<DataProvider>
+		<ComposedProviders>
 			<Layout>
+				<Header />
 				<Search />
 				<Router />
+				<Slider>
+					<CountryForm />
+				</Slider>
 			</Layout>
-		</DataProvider>
+		</ComposedProviders>
 	);
 };
 

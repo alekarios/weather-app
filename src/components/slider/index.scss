@@ -1,0 +1,31 @@
+@use 'src/base.scss';
+
+.slider-container {
+	position: absolute;
+	left: -50%;
+	z-index: 998;
+	color: #005c9c;
+	background: rgba(55, 62, 62, 0.9);
+	clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	transition: 300ms left cubic-bezier(0.77, 0, 0.175, 1);
+	@media only screen and (max-width: 600px) {
+		width: 343px;
+		left: -600px;
+	}
+
+	&__close {
+		@include base.text-dark(lg);
+		position: absolute;
+		cursor: pointer;
+		top: 20px;
+		right: 20px;
+	}
+}
+
+.active {
+	left: 0;
+}

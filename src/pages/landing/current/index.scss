@@ -1,25 +1,35 @@
 @use 'src/base.scss';
 
 .current-container {
+	width: 320px;
+	height: 250px;
+	margin-top: 30px;
+	border-radius: 20px;
+	background-image: url('../../../assets/forest.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 30px;
 
-	p {
-		font-weight: 800;
-		font-size: 2.3rem;
-		margin: 0;
-		@include base.main-text;
-		@include base.devices(mobile) {
-			font-size: 1.5rem;
+	&__main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap:5px;
+
+		p {
+			margin: 0;
+			@include base.text-dark(sm_1);
 		}
 	}
-
-	img {
-		width: 200px;
-		height: auto;
-		@include base.devices(mobile) {
-			width: 100px;
-		}
+	
+	&__tempInfo {
+		width: 300px;
+		height: 90px;
+		background: rgba(255, 255, 255, 0.3);
+		border-radius: 20px;
 	}
 }

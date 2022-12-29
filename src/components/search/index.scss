@@ -1,38 +1,45 @@
 @use 'src/base.scss';
 
 .search-container {
-	display: flex;
-	align-items: center;
 	width: 100%;
-	height: 56px;
-	gap: 20px;
+	height: 300px;
+	background-image: url('../../assets/nature.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
 
-	input {
-		@include base.main-backgound;
-		@include base.main-text;
-		width: 80%;
-		height: inherit;
-		border-radius: 16px;
-		border: 1px solid black;
-		box-sizing: border-box;
-
-		&:focus {
-			outline: none;
-			@include base.main-background-active;
+	&__items {
+		@include base.viewport;
+		margin-top: 100px;
+		:nth-child(1) {
+			@include base.text-dark(lg);
 		}
-	}
+		:nth-child(2) {
+			@include base.text-dark(md);
+		}
 
-	button {
-		@include base.main-backgound;
-		@include base.main-text;
-		width: 20%;
-		height: inherit;
-		border-radius: 16px;
-		border: solid black;
-		cursor: pointer;
+		p {
+			margin: 0;
+		}
 
-		&:hover {
-			@include base.main-background-active;
+		button {
+			@include base.text-dark(sm_2);
+			margin-top: 20px;
+			width: 80px;
+			height: 40px;
+			background: rgba(255, 255, 255, 0.1);
+			border: none;
+			transition: all 0.3s ease;
+			cursor: pointer;
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.2);
+			}
+			&:active {
+				background: rgba(255, 255, 255, 0.3);
+			}
 		}
 	}
 }

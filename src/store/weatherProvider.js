@@ -1,14 +1,8 @@
 /* eslint-disable default-case */
-import React, {
-	createContext,
-	useReducer,
-	useMemo,
-	useState,
-	useEffect,
-} from 'react';
+import React, { useReducer, useMemo, useState, useEffect } from 'react';
 import axios from 'axios';
 import Loader from 'src/components/loader/loader';
-axios.defaults.baseURL = `https://api.weatherapi.com/v1/forecast.json`;
+import { WeatherContext } from './contexts';
 
 const headers = {
 	'Access-Control-Allow-Headers': '*',
@@ -19,7 +13,7 @@ const headers = {
 const initialState = {
 	key: 'e83ef2057e354879951114815222312',
 	days: 10,
-	q: 'athens',
+	q: '',
 };
 
 const reducer = (state, action) => {
@@ -31,10 +25,8 @@ const reducer = (state, action) => {
 	}
 };
 
-//create context
-export const DataContext = createContext();
-
-export const DataProvider = ({ children }) => {
+const WeatherProvider = ({ children }) => {
+	axios.defaults.baseURL = `https://api.weatherapi.com/v1/forecast.json`;
 	const [response, setResponse] = useState({
 		data: {},
 		error: '',
@@ -77,9 +69,11 @@ export const DataProvider = ({ children }) => {
 	);
 
 	return (
-		<DataContext.Provider value={contextValue}>
+		<WeatherContext.Provider value={contextValue}>
 			<Loader enable={response.loading} />
 			{children}
-		</DataContext.Provider>
+		</WeatherContext.Provider>
 	);
 };
+
+export default WeatherProvider;

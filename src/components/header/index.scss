@@ -1,0 +1,9 @@
+@use 'src/base.scss';
+
+.header-container {
+	@include base.viewport;
+
+	p {
+		@include base.text-dark(md);
+	}
+}

@@ -1,30 +1,20 @@
 import './index.scss';
-import React, { useState, useContext } from 'react';
-import { DataContext } from 'src/store/context';
+import React, { useContext } from 'react';
+import { SliderContext } from 'src/store/contexts';
 
 const Search = () => {
-	const [city, setCity] = useState('');
-	const { dispatch } = useContext(DataContext);
+	const { dispatch } = useContext(SliderContext);
 
-	const handleType = (e) => {
-		const { value } = e.target;
-		setCity(value);
+	const handleClick = () => {
+		dispatch({ type: 'switch', payload: { open: true } });
 	};
-
-	const handleSearch = () => {
-		dispatch({
-			type: 'update',
-			payload: { q: city },
-		});
-	};
-
 	return (
 		<div className='search-container'>
-			<input
-				onChange={handleType}
-				placeholder='Search for cities'
-			/>
-			<button onClick={handleSearch}>Search</button>
+			<div className='search-container__items'>
+				<p>T-shirt or hoodie</p>
+				<p>{`Select your city and choose your outfit :)`}</p>
+				<button onClick={handleClick}>Add City</button>
+			</div>
 		</div>
 	);
 };
